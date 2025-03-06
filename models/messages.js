@@ -1,24 +1,24 @@
 const mongoose =require('mongoose');
 
 
-const userSchema = new mongoose.Schema({
-    message_id :{
-        type : String ,
-        required : true 
+const chatSchema = new mongoose.Schema(
+    {
+      messages: {
+        type: Map, //  كائن يحتوي على كل المحادثات
+        of: new mongoose.Schema(
+          {
+            conversations: {
+              type: Map, //  كل محادثة تحتوي على مصفوفة من النصوص فقط
+              of: [String], //  مصفوفة تحتوي على الرسائل كـ Strings
+            },
+          },
+          { _id: false }
+        ),
+      },
     },
-    sender_id :{
-        type : String ,
-        required : true 
-    },
-    receiver_id :{
-        type : String ,
-        required : true 
-    },
-    message_text :{
-        type : String ,
-        required : true 
-    },
-},{Timestamp : true})
-
-const Messages = mongoose.model('Messages' , userSchema )
- module.exports={Messages}
+    { timestamps: true }
+  );
+  
+  const Chats = mongoose.model("Chats", chatSchema);
+  
+  module.exports = { Chats };
