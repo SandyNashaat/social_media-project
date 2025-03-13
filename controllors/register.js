@@ -1,11 +1,11 @@
-import express from 'express';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import nodemailer from 'nodemailer';
-import User from '../models/users';
-import dotenv from 'dotenv';
 
-dotenv.config();
+const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const User = require('../models/users');
+require('dotenv').config()
+
 const router = express.Router();
 
 const transporter = nodemailer.createTransport({
