@@ -1,13 +1,15 @@
 const mongoose =require('mongoose');
 
 
-const userSchema = new mongoose.Schema({
-    post_id :{
-        type : String ,
+const StorySchema = new mongoose.Schema({
+    user_id :{
+        type : mongoose.Schema.Types.ObjectId ,
+        ref:'User',
         required : true 
     },
-    user_id :{
-        type : String ,
+    post_id :{
+        type : mongoose.Schema.Types.ObjectId ,
+        ref:'Post',
         required : true 
     },
     content :{
@@ -18,9 +20,9 @@ const userSchema = new mongoose.Schema({
         type : String ,
         required : true 
     },
-    expiresAt: { type: Date, required: true, index: { expires: 60 } } // يتم الحذف بعد 60 ثانية
+    expiresAt: { type: Date, required: true, index: { expires: 24 * 60 * 60 * 1000 } } 
 
 },{Timestamp : true})
 
-const stories = mongoose.model('stories' , userSchema )
- module.exports={stories}
+const Story = mongoose.model('Story' , StorySchema )
+module.exports={Story}

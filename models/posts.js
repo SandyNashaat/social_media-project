@@ -1,13 +1,10 @@
 const mongoose =require('mongoose');
 
 
-const userSchema = new mongoose.Schema({
-    post_id :{
-        type : String ,
-        required : true 
-    },
+const PostSchema = new mongoose.Schema({
     user_id :{
-        type : String ,
+        type : mongoose.Schema.Types.ObjectId ,
+        ref:'User',
         required : true 
     },
     content :{
@@ -20,5 +17,5 @@ const userSchema = new mongoose.Schema({
     },
 },{Timestamp : true})
 
-const Posts = mongoose.model('Posts' , userSchema )
- module.exports={Posts}
+const Post = mongoose.model('Post' , PostSchema )
+module.exports={Post}
