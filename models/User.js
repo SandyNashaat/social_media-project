@@ -42,6 +42,10 @@ const userSchema = new mongoose.Schema({
         type : String ,
         required : true 
     },
+    language: {
+         type : String ,
+          default: "en" ,
+    },
     follower :[String],
     following :[String],
 
