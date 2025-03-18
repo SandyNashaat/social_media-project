@@ -1,5 +1,5 @@
 const Friend = require("../models/friends");
-const user = require("../models/users");
+const User = require("../models/User");
 const mongoose = require("mongoose");
 // // Get Friends List
 // exports.getFriends = async (req, res) => {

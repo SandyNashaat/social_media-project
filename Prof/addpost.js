@@ -10,7 +10,7 @@
 //     res.status(500).send(err.message);
 //   }
 // };
-const Post = require("../models/posts");
+const Post = require("../models/Post");
 
 // Add Post
 exports.addPost = async (req, res) => {

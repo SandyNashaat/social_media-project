@@ -14,7 +14,7 @@
 //     res.status(500).send(err.message);
 //   }
 // };
-const User = require("../models/users");
+const User = require("../models/User");
 const mongoose = require("mongoose");
 // const editProfile = async (userId, profileData) => {
 //   try {
