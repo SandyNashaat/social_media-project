@@ -1,6 +1,6 @@
 const Image = require("../models/images");
 const mongoose = require("mongoose");
-const User = require("../models/users");
+const User = require("../models/User");
 // Upload Image Controller
 // exports.uploadImage = async (req, res) => {
 //   try {

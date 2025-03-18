@@ -1,5 +1,5 @@
 const { Server } = require('socket.io');
-const Message = require('../models/messages');
+const Message = require('../models/Chat');
 
 let waitingUser = null;
 

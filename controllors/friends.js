@@ -1,4 +1,4 @@
-const User = require('../models/users');
+const User = require('../models/User');
 
 // Send Friend Request
 exports.addFriend = async (req, res) => {

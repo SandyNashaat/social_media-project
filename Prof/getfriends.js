@@ -1,4 +1,4 @@
-const Friend = require("../models/friends");
+const Friend = require("../models/Friend");
 const User = require("../models/User");
 const mongoose = require("mongoose");
 // // Get Friends List

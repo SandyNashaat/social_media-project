@@ -1,6 +1,6 @@
-const Video = require("../models/reels");
+const Video = require("../models/Video");
 const mongoose = require("mongoose");
-const User = require("../models/users");
+const User = require("../models/User");
 // Upload Video Controller
 // exports.uploadVideo = async (req, res) => {
 //   try {
