@@ -7,7 +7,7 @@ const {resetpassword} =require('../controllors/register')
 const router = express.Router();
 app.post('/register',register)
 app.post('/verify_otp',verify_otp)
-app.post('/forgot-password',forgotpassword)
-app.post('/reset-password/:token',resetpassword)
+// app.post('/forgot-password',forgotpassword)
+// app.post('/reset-password/:token',resetpassword)
 //app.use(verifyJWT)
 module.exports = router;
