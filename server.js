@@ -63,7 +63,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const connectDB = require("./config/db");
+const {connectDB} = require("./config/db");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const cors = require("cors");

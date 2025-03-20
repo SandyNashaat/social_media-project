@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .name-fields {
+            display: flex;
+            gap: 10px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gender {
+            display: flex;
+            justify-content: space-around;
+        }
+        .signup-btn {
+            background: #42b72a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .login-link a {
+            text-decoration: none;
+            color: #1877f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create a new account</h1>
+        <p>It's quick and easy.</p>
+        <form action="/register" method="POST" class="register-form">
+            <div class="name-fields">
+                <input type="text" name="firstName" placeholder="First name" required />
+                <input type="text" name="surname" placeholder="Surname" required />
+            </div>
+            
+            <label>Date of birth</label>
+            <div class="dob">
+                <select name="day">
+                    <% for(let i = 1; i <= 31; i++) { %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                </select>
+                <select name="month">
+                    <% let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; %>
+                    <% for(let i = 0; i < months.length; i++) { %>
+                        <option value="<%= months[i] %>"><%= months[i] %></option>
+                    <% } %>
+                </select>
+                <select name="year">
+                    <% for(let i = 2025; i >= 1925; i--) { %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <label>Gender</label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="Female" required /> Female</label>
+                <label><input type="radio" name="gender" value="Male" required /> Male</label>
+            </div>
+
+            <input type="email" name="email" placeholder="Mobile number or email address" required />
+            <input type="password" name="password" placeholder="New password" required />
+
+            <p class="policy">
+                By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>.
+            </p>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+            <p class="login-link"><a href="/login">Already have an account?</a></p>
+
+
+        </form>
+    </div>
+</body>
+</html>
+
