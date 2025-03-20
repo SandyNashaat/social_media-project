@@ -1,5 +1,5 @@
-const { User } = require('../models/User'); 
-const { Post } = require('../models/Post'); 
+const { User } = require('../../models/User'); 
+const { Post } = require('../../models/Post'); 
 
 //الناتج هيكون Array تحتوي على كل الـ _id الخاصة بالبوستات اللي نشرها الأشخاص اللي المستخدم بيتابعهم
    

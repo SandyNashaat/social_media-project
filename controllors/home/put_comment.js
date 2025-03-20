@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const {Comment }= require("../models/Comment");
-const {Notification} = require('../models/Notification');
+const {Comment }= require("../../models/Comment");
+const {Notification} = require('../../models/Notification');
 
 
 // Like or Unlike a post
