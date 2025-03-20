@@ -1,10 +1,10 @@
 const { User } = require('../models/User'); 
-const { Video } = require('../models/Video'); 
+const { Post } = require('../models/Post'); 
 
 //الناتج هيكون Array تحتوي على كل الـ _id الخاصة بالبوستات اللي نشرها الأشخاص اللي المستخدم بيتابعهم
    
 
-    const Video_scrolle = async (req, res) => {
+    const Post_scrolle = async (req, res) => {
         try {
             const { userId } = req.params;
     
@@ -19,7 +19,7 @@ const { Video } = require('../models/Video');
             }
     
             // sort the following from the new 
-            const posts = await Video.find({ user_id: { $in: followingList } })
+            const posts = await Post.find({ user_id: { $in: followingList } })
                 .sort({ createdAt: -1 })
                 .select("_id");
     
@@ -29,7 +29,7 @@ const { Video } = require('../models/Video');
             res.status(500).json({ message: 'Server error in get user following post list'});
         }
     }
-    module.exports ={Video_scrolle};
+    module.exports ={Post_scrolle};
 /*
  مثال لل responce
 [
