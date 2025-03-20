@@ -5,7 +5,7 @@ const {Notification} = require('../../models/Notification');
 
 
 // Like or Unlike a post
-const Post_like = async (req, res) => {
+const Post_comment = async (req, res) => {
     try {
         const { userId } = req.body;  // Assume userId is sent in the request
         const { postId } = req.params;
@@ -41,4 +41,4 @@ const Post_like = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-module.exports ={Post_like};
+module.exports ={Post_comment};

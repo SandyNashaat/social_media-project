@@ -4,7 +4,7 @@ const { Post } = require('../../models/Post');
 //الناتج هيكون Array تحتوي على كل الـ _id الخاصة بالبوستات اللي نشرها الأشخاص اللي المستخدم بيتابعهم
    
 
-    const Post_comments = async (req, res) => {
+    const comments_scroll = async (req, res) => {
         try {
             const { postId } = req.params;
     
@@ -17,7 +17,7 @@ const { Post } = require('../../models/Post');
             res.status(500).json({ message: 'Server error' });
         }
     }
-    module.exports ={Post_comments};
+    module.exports ={comments_scroll};
 /*
  مثال لل responce
 [
