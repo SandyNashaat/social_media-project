@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+   
+            
+            body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.profile-header {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 250px;
+    background: #ddd;
+    position: relative;
+}
+
+.edit-cover {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.profile-info {
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    background: #bbb;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: -60px;
+}
+
+.username {
+    margin-top: -50px;
+}
+
+.friends-count {
+    color: gray;
+}
+
+.add-story,
+.edit-profile {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-story {
+    background: #1877f2;
+    color: white;
+}
+
+.edit-profile {
+    background: #e4e6eb;
+}
+
+.profile-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+.profile-nav ul li {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.profile-content {
+    margin-top: 20px;
+}
+
+.intro,
+.posts {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+        }
+    </style>
+</head>
+
+
+    <body>
+        <div id="root"></div>
+    
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+        <script type="text/babel">
+            const Profile = () => {
+                return (
+                    <div className="profile-container">
+                        <header className="profile-header">
+                            <div className="cover-photo">
+                                <button className="edit-cover">Edit cover photo</button>
+                            </div>
+                            <div className="profile-info">
+                                <div className="profile-pic"></div>
+                                <h1 className="username">User</h1>
+                                <p className="friends-count">513 friends</p>
+                                <button className="add-story">+ Add to story</button>
+                                <button className="edit-profile">Edit profile</button>
+                            </div>
+                        </header>
+                        <nav className="profile-nav">
+                            <ul>
+                                <li>Posts</li>
+                                <li>About</li>
+                                <li>Friends</li>
+                                <li>Photos</li>
+                                <li>Videos</li>
+                                <li>More</li>
+                            </ul>
+                        </nav>
+                        <main className="profile-content">
+                            <section className="intro">
+                                <h2>Intro</h2>
+                                <p>Add a short bio about yourself</p>
+                                <button>Edit Bio</button>
+                            </section>
+                            <section className="posts">
+                                <h2>Posts</h2>
+                                <div className="post">
+                                    <p>Post content goes here...</p>
+                                </div>
+                            </section>
+                        </main>
+                    </div>
+                );
+            };
+    
+            ReactDOM.createRoot(document.getElementById("root")).render(<Profile />);
+        </script>
+    </body>
+    </html>

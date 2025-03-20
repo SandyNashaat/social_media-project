@@ -62,5 +62,5 @@ const editProfile = async (userId, profileData) => {
   }
 };
 
-module.exports = editProfile;
+module.exports = {editProfile};
 
